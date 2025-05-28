@@ -1,3 +1,4 @@
+/*Creacion de la base de datos de cafe internet */
 create database cafe_internet;
 use cafe_internet;
 create table Detalles_venta(
