@@ -16,4 +16,4 @@
 /*Espacio para agregar registros de Max */
 /*(Tablas Detalles_Renta,Detalles_Venta,Venta)*/
 /*Ejemplo de que estoy agregando mis registros */
-
+/*Registros de detalles_venta y detalles_renta, y ventas */
