@@ -11,5 +11,4 @@
 
 
 /*Espacio para agregar registros de Max */
-/*Hola que hace*/
-/*Comentario extra  */
+/*Agregar comentario desde la rama de Max/*
