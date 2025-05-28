@@ -11,4 +11,4 @@
 
 
 /*Espacio para agregar registros de Max */
-/*Agregar comentario desde la rama de Max/*
+/*(Tablas Detalles_Renta,Detalles_Venta,Venta)*/
