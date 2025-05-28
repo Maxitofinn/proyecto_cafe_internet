@@ -1,5 +1,5 @@
 /*Espacio para agregar registros de Alan */
-
+/*agregando tablas de ALAN(Tabla Inventario)*/
 
 
 /*Espacio para agregar registros de Aaron */
