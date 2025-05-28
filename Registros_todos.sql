@@ -3,7 +3,7 @@
 
 
 /*Espacio para agregar registros de Aaron */
-
+/*(Tablas Productos_Papeleria,Productos_Snacks,Empleados) */
 
 
 /*Espacio para agregar registros de Jair */
