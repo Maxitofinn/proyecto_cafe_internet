@@ -9,7 +9,7 @@
 
 
 /*Espacio para agregar registros de Jair */
-
+/*Mañana toca llevar la hoja de los pokemones */
 
 
 
