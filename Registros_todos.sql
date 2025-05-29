@@ -1,5 +1,115 @@
-/*Espacio para agregar registros de Alan */
-/*agregando tablas de ALAN(Tabla Inventario)*/
+INSERT INTO Empleados (RFC, Fecha_de_contratacion, Puesto, Sueldo, Turno, Estatus, Correo, Telefono, Nombre, Ap_paterno, Ap_materno, Sexo) VALUES
+('ABC1234567890', '2020-03-15', 'Cajero', 4500.00, 'matutino', 'activo', 'juan.perez@papeleria.com', '5512345678', 'Juan', 'Pérez', 'Gómez', 'h'),
+('DEF9876543210', '2021-05-22', 'Atención a clientes', 4800.00, 'vespertino', 'activo', 'maria.lopez@papeleria.com', '5523456789', 'María', 'López', 'Martínez', 'm'),
+('GHI4567890123', '2019-11-10', 'Encargado de inventario', 5500.00, 'intermedio', 'activo', 'carlos.garcia@papeleria.com', '5534567890', 'Carlos', 'García', 'Hernández', 'h'),
+('JKL0123456789', '2022-02-28', 'Técnico de consolas', 5200.00, 'vespertino', 'activo', 'ana.torres@papeleria.com', '5545678901', 'Ana', 'Torres', 'Vargas', 'm'),
+('MNO7890123456', '2023-01-15', 'Auxiliar general', 4200.00, 'fin de semana', 'activo', 'luis.mendoza@papeleria.com', '5556789012', 'Luis', 'Mendoza', 'Silva', 'h'),
+('PQR2345678901', '2020-07-30', 'Gerente', 7500.00, 'matutino', 'activo', 'sofia.ruiz@papeleria.com', '5567890123', 'Sofía', 'Ruiz', 'Castro', 'm'),
+('STU9012345678', '2022-09-05', 'Cajero', 4500.00, 'vespertino', 'inactivo', 'pedro.diaz@papeleria.com', '5578901234', 'Pedro', 'Díaz', 'Flores', 'h'),
+('VWX3456789012', '2021-12-12', 'Encargado de rentas', 5000.00, 'intermedio', 'activo', 'laura.hernandez@papeleria.com', '5589012345', 'Laura', 'Hernández', 'Ortega', 'm'),
+('YZA6789012345', '2023-04-01', 'Atención a clientes', 4800.00, 'fin de semana', 'activo', 'jorge.morales@papeleria.com', '5590123456', 'Jorge', 'Morales', 'Ramírez', 'h'),
+('BCD0123456789', '2018-08-20', 'Limpieza y mantenimiento', 4000.00, 'matutino', 'activo', 'isabel.castro@papeleria.com', '5501234567', 'Isabel', 'Castro', 'González', 'm');
+
+INSERT INTO Dispositivos (Nombre_dispositivo, Tipo_dispositivo, Estado_unidad, Numero_serie) VALUES
+-- Consolas
+('PlayStation 5', 'Consola', 'Disponible', 'PS50001234'),
+('PlayStation 4', 'Consola', 'En renta', 'PS40004567'),
+('Xbox Series X', 'Consola', 'Disponible', 'XBX6001123'),
+('Xbox One', 'Consola', 'Dañado', 'XBX1000654'),
+('Xbox 360', 'Consola', 'En Mantenimiento', 'XBX3607890'),
+('Nintendo Switch', 'Consola', 'Disponible', 'NSW4003210'),
+-- Controles
+('Control PS5 DualSense', 'Control', 'Disponible', 'CTRLPS501'),
+('Control PS4 DualShock', 'Control', 'En renta', 'CTRLPS402'),
+('Control Xbox Series X', 'Control', 'Dañado', 'CTRLXBX03'),
+('Control Xbox One', 'Control', 'Disponible', 'CTRLXBX04'),
+('Control Xbox 360', 'Control', 'En Mantenimiento', 'CTRLXBX05'),
+('Joy-Con Nintendo Switch', 'Control', 'Disponible', 'JCNNSW06'),
+-- Juegos
+('FIFA 25 PS5', 'Juego', 'Disponible', 'FIFA250001'),
+('The Last of Us Part III PS5', 'Juego', 'En renta', 'TLOU30021'),
+('God of War: Valhalla PS5', 'Juego', 'Disponible', 'GOWV25222'),
+('Spider-Man 2 PS5', 'Juego', 'Disponible', 'SPM200099'),
+('Uncharted: Legacy Collection PS5', 'Juego', 'En Mantenimiento', 'UNCHRT015'),
+('Halo Infinite: Reborn Xbox', 'Juego', 'Dañado', 'HALO00888'),
+('Forza Horizon 6 Xbox', 'Juego', 'Disponible', 'FORZA6111'),
+('Gears 6 Xbox', 'Juego', 'En renta', 'GEARS6999'),
+('Starfield: Extended Xbox', 'Juego', 'Disponible', 'STFLD0011'),
+('Mario Kart X Switch', 'Juego', 'Disponible', 'MKARTSW10'),
+('The Legend of Zelda: Echoes of Time Switch', 'Juego', 'En Mantenimiento', 'ZELDAET09'),
+('Super Smash Bros. Ultimate DX Switch', 'Juego', 'Disponible', 'SSBUDX003'),
+('Animal Crossing: New Frontiers Switch', 'Juego', 'Dañado', 'ACNF0022'),
+('Call of Duty: Black Ops V Xbox', 'Juego', 'Disponible', 'CODBO5004'),
+('Gran Turismo 8 PS5', 'Juego', 'En renta', 'GT8054321'),
+-- Computadora
+('Computadora', 'Computadora', 'Disponible', 'PC00001111');
+
+INSERT INTO Productos_Papeleria (Nombre_producto, Descripcion, Precio_unitario, Marca) VALUES
+('Lápiz HB', 'Lápiz grafito HB', 3.50, 'Staedtler'),
+('Cuaderno cuadrícula', 'Cuaderno 100 hojas', 25.00, 'Moleskine'),
+('Borrador blanco', 'Borrador suave', 5.00, 'Faber-Castell'),
+('Pluma azul', 'Pluma tinta azul', 7.50, 'Bic'),
+('Resistol pegamento', 'Pegamento blanco', 15.00, 'Elmer''s'),
+('Hojas blancas', 'Paquete 100 hojas', 18.00, 'Navigator'),
+('Marcador negro', 'Marcador permanente', 12.00, 'Sharpie'),
+('Regla 30 cm', 'Regla plástica', 8.00, 'Maped'),
+('Tijeras', 'Tijeras escolares', 20.00, 'Fiskars'),
+('Corrector líquido', 'Corrector blanco', 10.00, 'Pentel'),
+('Carpeta plástico', 'Carpeta tamaño carta', 22.00, 'Pendaflex'),
+('Grapadora pequeña', 'Grapadora metálica', 30.00, 'Swingline'),
+('Clips metálicos', 'Paquete 100 clips', 6.00, 'ACCO'),
+('Calculadora básica', 'Calculadora 8 dígitos', 80.00, 'Casio'),
+('Cinta adhesiva', 'Cinta transparente', 9.00, 'Scotch'),
+('Papel bond color', 'Paquete 100 hojas', 25.00, 'Hammermill');
+
+INSERT INTO Productos_Snacks (Nombre_producto, Descripcion, Precio_unitario, Marca) VALUES
+('Coca-Cola 600ml', 'Refresco 600 ml', 18.00, 'Coca-Cola'),
+('Sabritas Original', 'Botana salada', 15.00, 'Sabritas'),
+('Jugo Jumex Mango', 'Jugo mango 250 ml', 12.00, 'Jumex'),
+('Agua Bonafont 1L', 'Agua natural 1 litro', 10.00, 'Bonafont'),
+('Galletas Oreo', 'Galletas chocolate', 20.00, 'Nabisco'),
+('Papas Ruffles', 'Papas fritas 170 g', 25.00, 'Ruffles'),
+('Mazapan', 'Dulce mazapán', 5.00, 'Gamesa'),
+('Pulparindo', 'Dulce tamarindo', 8.00, 'La Costeña'),
+('Chocolate Abuelita', 'Chocolate para mesa', 30.00, 'Abuelita'),
+('Cacahuates Japoneses', 'Cacahuates salados', 22.00, 'Tuny'),
+('Galletas Marías', 'Galletas dulces', 12.00, 'Gamesa'),
+('Agua Ciel 500ml', 'Agua purificada 500ml', 8.00, 'Ciel'),
+('Refresco Fanta 355ml', 'Refresco naranja', 14.00, 'Fanta'),
+('Barritas de granola', 'Barritas saludables', 18.00, 'Nature Valley'),
+('Palomitas de maíz', 'Snack maíz inflado', 20.00, 'Orville'),
+('Chicles Trident', 'Chicle sin azúcar', 10.00, 'Trident'),
+('Yogur Danone 125ml', 'Yogur bebible', 14.00, 'Danone'),
+('Bebida energética', 'Bebida 250ml', 30.00, 'Red Bull'),
+('Dulce de leche', 'Dulce en barra', 15.00, 'La Lechera'),
+('Salsa Valentina', 'Salsa picante', 25.00, 'Valentina');
+
+INSERT INTO Renta_Dispositivos (id_Empleados, Fecha_hora_inicio, Fecha_hora_fin, Monto_total) VALUES
+-- Juan (matutino)
+(1, '2025-05-06 09:00:00', '2025-05-06 11:00:00', 120.00),
+(1, '2025-05-08 08:30:00', '2025-05-08 10:30:00', 95.00),
+(1, '2025-05-10 10:00:00', '2025-05-10 13:00:00', 130.00),
+-- María (vespertino)
+(2, '2025-05-06 15:00:00', '2025-05-06 17:30:00', 115.00),
+(2, '2025-05-09 14:30:00', '2025-05-09 16:00:00', 90.00),
+(2, '2025-05-13 16:00:00', '2025-05-13 18:00:00', 105.00),
+-- Luis (fin de semana)
+(5, '2025-05-03 11:00:00', '2025-05-03 13:30:00', 125.00), 
+(5, '2025-05-04 12:00:00', '2025-05-04 14:30:00', 140.00), 
+(5, '2025-05-11 15:00:00', '2025-05-11 17:00:00', 135.00), 
+-- Sofía (matutino)
+(6, '2025-05-07 09:00:00', '2025-05-07 11:30:00', 130.00),
+(6, '2025-05-12 08:00:00', '2025-05-12 10:00:00', 95.00),
+(6, '2025-05-14 10:30:00', '2025-05-14 13:00:00', 140.00),
+-- Pedro (vespertino - inactivo pero incluido)
+(7, '2025-05-06 14:00:00', '2025-05-06 16:00:00', 120.00),
+(7, '2025-05-10 15:30:00', '2025-05-10 17:30:00', 110.00),
+(7, '2025-05-13 16:00:00', '2025-05-13 18:00:00', 105.00),
+-- Laura (intermedio)
+(8, '2025-05-05 12:00:00', '2025-05-05 14:30:00', 125.00),
+(8, '2025-05-08 13:00:00', '2025-05-08 15:00:00', 110.00),
+(8, '2025-05-10 11:30:00', '2025-05-10 13:30:00', 150.00);
+
 INSERT INTO Inventario (Nombre_producto, Stock, Fecha) VALUES
 -- Consolas (6)
 ('PlayStation 5', 3, '2025-01-15 08:30:00'),
@@ -8,7 +118,6 @@ INSERT INTO Inventario (Nombre_producto, Stock, Fecha) VALUES
 ('Xbox One', 3, '2025-01-15 08:30:00'),
 ('Xbox 360', 2, '2025-01-15 08:30:00'),
 ('Nintendo Switch', 4, '2025-01-15 08:30:00'),
-
 -- Controles (6)
 ('Control PS5 DualSense', 6, '2025-01-15 08:30:00'),
 ('Control PS4 DualShock', 8, '2025-01-15 08:30:00'),
@@ -16,7 +125,6 @@ INSERT INTO Inventario (Nombre_producto, Stock, Fecha) VALUES
 ('Control Xbox One', 6, '2025-01-15 08:30:00'),
 ('Control Xbox 360', 4, '2025-01-15 08:30:00'),
 ('Joy-Con Nintendo Switch', 7, '2025-01-15 08:30:00'),
-
 -- Juegos (15)
 ('FIFA 25 PS5', 3, '2025-01-15 08:30:00'),
 ('The Last of Us Part III PS5', 4, '2025-01-15 08:30:00'),
@@ -33,10 +141,8 @@ INSERT INTO Inventario (Nombre_producto, Stock, Fecha) VALUES
 ('Animal Crossing: New Frontiers Switch', 2, '2025-01-15 08:30:00'),
 ('Call of Duty: Black Ops V Xbox', 3, '2025-01-15 08:30:00'),
 ('Gran Turismo 8 PS5', 2, '2025-01-15 08:30:00'),
-
 -- Computadoras (1)
 ('Computadora', 8, '2025-01-15 08:30:00'),
-
 -- Productos Papelería (6)
 ('Lápiz HB', 50, '2025-01-15 08:30:00'),
 ('Cuaderno cuadrícula', 30, '2025-01-15 08:30:00'),
@@ -44,7 +150,6 @@ INSERT INTO Inventario (Nombre_producto, Stock, Fecha) VALUES
 ('Pluma azul', 45, '2025-01-15 08:30:00'),
 ('Resistol pegamento', 15, '2025-01-15 08:30:00'),
 ('Hojas blancas', 20, '2025-01-15 08:30:00'),
-
 -- Snacks (10)
 ('Coca-Cola 600ml', 48, '2025-01-15 08:30:00'),
 ('Sabritas Original', 36, '2025-01-15 08:30:00'),
@@ -57,18 +162,91 @@ INSERT INTO Inventario (Nombre_producto, Stock, Fecha) VALUES
 ('Chocolate Abuelita', 30, '2025-01-15 08:30:00'),
 ('Cacahuates Japoneses', 25, '2025-01-15 08:30:00');
 
-/*Espacio para agregar registros de Aaron */
-/*(Tablas Productos_Papeleria,Productos_Snacks,Empleados) */
+INSERT INTO Ventas (id_Empleado, Fecha_venta, Total_venta, Metodo_de_pago) VALUES
+(1, '2025-05-01', 48.00, 'Efectivo'),
+(2, '2025-05-02', 22.00, 'Tarjeta'),
+(1, '2025-05-04', 60.00, 'Efectivo'),
+(5, '2025-05-05', 32.00, 'Tarjeta'),
+(6, '2025-05-06', 18.00, 'Efectivo'),
+(6, '2025-05-08', 10.00, 'Efectivo'),
+(6, '2025-05-09', 90.00, 'Tarjeta'),
+(1, '2025-05-10', 27.00, 'Efectivo');
 
 
+INSERT INTO Detalles_venta (id_Ventas, id_Productos, id_Snacks, Cantidad, Nombre_producto, Precio_unitario, Subtotal) VALUES
+(1, 17, NULL, 3, 'Lápiz HB', 3.5, 10.5),
+(1, 20, NULL, 2, 'Pluma azul', 7.50, 15.00),
+(1, NULL, 1, 1, 'Coca-Cola 600ml', 18.00, 18.00),
+(2, NULL, 5, 2, 'Galletas Oreo', 20.00, 40.00),
+(2, 18, NULL, 1, 'Cuaderno cuadrícula', 25.00, 25.00),
+(2, NULL, 7, 4, 'Mazapan', 5.00, 20.00),
+(3, 19, NULL, 5, 'Borrador blanco', 5.00, 25.00),
+(3, NULL, 6, 3, 'Papas Ruffles', 25.00, 75.00),
+(3, 21, NULL, 1, 'Resistol pegamento', 15.00, 15.00),
+(4, NULL, 10, 2, 'Cacahuates Japoneses', 22.00, 44.00),
+(4, 22, NULL, 3, 'Hojas blancas', 18.00, 54.00),
+(4, NULL, 3, 1, 'Jugo Jumex Mango', 12.00, 12.00),
+(5, 23, NULL, 4, 'Marcador negro', 12.00, 48.00),
+(5, NULL, 4, 2, 'Sabritas Original', 15.00, 30.00),
+(5, 24, NULL, 1, 'Regla 30 cm', 8.00, 8.00),
+(6, NULL, 8, 3, 'Pulparindo', 8.00, 24.00),
+(6, 25, NULL, 1, 'Tijeras', 20.00, 20.00),
+(6, NULL, 9, 2, 'Chocolate Abuelita', 30.00, 60.00),
+(7, 26, NULL, 5, 'Corrector líquido', 10.00, 50.00),
+(7, NULL, 2, 4, 'Sabritas Original', 15.00, 60.00),
+(7, 27, NULL, 3, 'Carpeta plástico', 22.00, 66.00),
+(8, NULL, 12, 1, 'Agua Ciel 500ml', 8.00, 8.00),
+(8, 28, NULL, 2, 'Grapadora pequeña', 30.00, 60.00),
+(8, NULL, 13, 5, 'Refresco Fanta 355ml', 14.00, 70.00),
+(1, 29, NULL, 4, 'Clips metálicos', 6.00, 24.00),
+(1, NULL, 14, 3, 'Barritas de granola', 18.00, 54.00),
+(1, 30, NULL, 1, 'Calculadora básica', 80.00, 80.00),
+(8, NULL, 15, 2, 'Palomitas de maíz', 20.00, 40.00),
+(8, 31, NULL, 3, 'Cinta adhesiva', 9.00, 27.00),
+(7, NULL, 16, 4, 'Chicles Trident', 10.00, 40.00),
+(1, 32, NULL, 2, 'Papel bond color', 25.00, 50.00),
+(1, NULL, 17, 1, 'Yogur Danone 125ml', 14.00, 14.00),
+(2, 19, NULL, 3, 'Borrador blanco', 5.00, 15.00),
+(2, NULL, 18, 2, 'Bebida energética', 30.00, 60.00),
+(3, 21, NULL, 2, 'Resistol pegamento', 15.00, 30.00),
+(3, NULL, 19, 3, 'Dulce de leche', 15.00, 45.00),
+(4, 23, NULL, 1, 'Marcador negro', 12.00, 12.00),
+(4, NULL, 20, 2, 'Salsa Valentina', 25.00, 50.00);
 
-
-/*Espacio para agregar registros de Jair */
-/*Mañana toca llevar la hoja de los pokemones */
-
-
-
-/*Espacio para agregar registros de Max */
-/*(Tablas Detalles_Renta,Detalles_Venta,Venta)*/
-/*Ejemplo de que estoy agregando mis registros */
-/*Registros de detalles_venta y detalles_renta, y ventas */
+INSERT INTO Detalles_renta (id_Renta, id_Dispositivos, Tipo, Cantidad, Horas_rentadas, Costo_de_renta, Subtotal) VALUES
+(1, 1, 'Consola', 1, 2, 40.00, 80.00),
+(1, 2, 'Control', 2, 2, 15.00, 60.00),
+(2, 3, 'Juego', 1, 2, 20.00, 40.00),
+(2, 4, 'Computadora', 1, 2, 50.00, 100.00),
+(3, 5, 'Consola', 1, 3, 35.00, 105.00),
+(3, 6, 'Control', 1, 3, 20.00, 60.00),
+(4, 7, 'Juego', 2, 2, 25.00, 100.00),
+(4, 8, 'Computadora', 1, 2, 45.00, 90.00),
+(5, 9, 'Consola', 1, 1, 40.00, 40.00),
+(5, 10, 'Control', 1, 1, 15.00, 15.00),
+(6, 1, 'Juego', 2, 2, 22.00, 88.00),
+(6, 2, 'Computadora', 1, 2, 48.00, 96.00),
+(7, 3, 'Consola', 1, 2, 38.00, 76.00),
+(7, 4, 'Control', 2, 2, 18.00, 72.00),
+(8, 5, 'Juego', 1, 3, 20.00, 60.00),
+(8, 6, 'Computadora', 1, 3, 50.00, 150.00),
+(9, 7, 'Consola', 1, 2, 40.00, 80.00),
+(9, 8, 'Control', 1, 2, 15.00, 30.00),
+(10, 9, 'Juego', 2, 2, 25.00, 100.00),
+(10, 10, 'Computadora', 1, 2, 45.00, 90.00),
+(11, 1, 'Consola', 1, 2, 40.00, 80.00),
+(11, 2, 'Control', 2, 2, 15.00, 60.00),
+(12, 3, 'Juego', 1, 2, 20.00, 40.00),
+(12, 4, 'Computadora', 1, 2, 50.00, 100.00),
+(13, 5, 'Consola', 1, 3, 35.00, 105.00),
+(13, 6, 'Control', 1, 3, 20.00, 60.00),
+(14, 7, 'Juego', 2, 2, 25.00, 100.00),
+(14, 8, 'Computadora', 1, 2, 45.00, 90.00),
+(15, 9, 'Consola', 1, 1, 40.00, 40.00),
+(15, 10, 'Control', 1, 1, 15.00, 15.00),
+(16, 1, 'Juego', 2, 2, 22.00, 88.00),
+(16, 2, 'Computadora', 1, 2, 48.00, 96.00),
+(17, 3, 'Consola', 1, 2, 38.00, 76.00),
+(17, 4, 'Control', 2, 2, 18.00, 72.00),
+(18, 5, 'Juego', 1, 3, 20.00, 60.00),
+(18, 6, 'Computadora', 1, 3, 50.00, 150.00);
