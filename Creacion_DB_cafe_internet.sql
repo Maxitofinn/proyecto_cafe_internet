@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*Creacion de la base de datos de cafe internet */
 create database cafe_internet;
 use cafe_internet;
@@ -98,3 +99,6 @@ create table Detalles_renta(
     foreign key(id_Empleado) references Empleados(Id_Empleado)
     );
     
+=======
+/* Borre estos registrosa*/
+>>>>>>> 16e655778438b764ed78e5ddc843d122e0bbf49f
