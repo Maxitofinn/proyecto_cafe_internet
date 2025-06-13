@@ -402,6 +402,81 @@ main {
     background-color: #fff2cc;
 }
 
+/* Estilos para la página de historial de ventas */
+
+.filtros-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.filtro-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filtro-item label {
+    font-weight: 600;
+    color: #484d53;
+    font-size: 0.9rem;
+}
+
+.resultados-container {
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.tabla-ventas {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabla-ventas table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.tabla-ventas th, .tabla-ventas td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tabla-ventas th {
+    background-color: #f5f7f9;
+    font-weight: 600;
+    color: #484d53;
+}
+
+.tabla-ventas tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Estilos para el calendario */
+.flatpickr-input {
+    background-color: #f9f9f9 !important;
+    border: 2px solid #e0e0e0 !important;
+    font-family: "Nunito", sans-serif !important;
+}
+
+.flatpickr-input:focus {
+    outline: none !important;
+    border-color: #5a4fcf !important;
+    box-shadow: 0 0 0 3px rgba(90, 79, 207, 0.2) !important;
+    background-color: white !important;
+}
+
 /* Estilos responsivos para Productos */
 @media (max-width: 1150px) {
     .filtros-container {
@@ -411,6 +486,25 @@ main {
     
     .filtro-item {
         width: 100%;
+    }
+}
+
+/* Estilos responsivos para filtros */
+@media (max-width: 1150px) {
+    .filtros-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .filtro-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .tabla-ventas th, .tabla-ventas td {
+        padding: 8px 10px;
+        font-size: 0.9rem;
     }
 }
 

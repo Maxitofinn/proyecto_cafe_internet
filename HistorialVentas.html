@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Ventas - Café Internet</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Librería para el calendario -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="import" href="menu.html" id="menu-import">
+</head>
+<body>
+    <main>
+        <section class="content">
+            <div class="left-content">
+                <div class="activities">
+                    <h1>Historial de Ventas</h1>
+                    
+                    <!-- Filtros superiores -->
+                    <div class="filtros-container">
+                        <!-- Filtro por fecha -->
+                        <div class="filtro-item">
+                            <label for="fechaVenta">Fecha de Venta</label>
+                            <input type="text" class="caja_productos" id="fechaVenta" placeholder="Seleccione una fecha">
+                        </div>
+                        
+                        <!-- Filtro por orden -->
+                        <div class="filtro-item">
+                            <label for="ordenarVentas">Ordenar por ID</label>
+                            <select class="caja_productos" id="ordenarVentas">
+                                <option value="id-asc">Ascendente</option>
+                                <option value="id-desc">Descendente</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Búsqueda por ID -->
+                        <div class="filtro-item">
+                            <label for="buscarId">Buscar por ID</label>
+                            <input type="text" class="caja_productos" id="buscarId" placeholder="Ingrese ID de venta">
+                        </div>
+                    </div>
+                    
+                    <!-- Resultados de ventas -->
+                    <div class="resultados-container">
+                        <div class="tabla-ventas">
+                            <table id="tablaVentas">
+                                <thead>
+                                    <tr>
+                                        <th>ID Venta</th>
+                                        <th>Fecha</th>
+                                        <th>Empleado</th>
+                                        <th>Productos</th>
+                                        <th>Cantidad</th>
+                                        <th>Total</th>
+                                        <th>Forma de Pago</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Los resultados se cargarán dinámicamente aquí -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Script para el calendario -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+    
+    <script src="/js/menu.js"></script>
+    <script src="/js/HistorialVentas.js"></script>
+</body>
+</html>
