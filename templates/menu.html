@@ -1,0 +1,60 @@
+<!-- menu.html -->
+<nav class="main-menu">
+    <h1>Café Internet</h1>
+    <ul>
+        <li class="nav-item" id="nav-inicio">
+            <b></b>
+            <b></b>
+            <a href="RegistrarVenta.html">
+                <i class="fa fa-house nav-icon"></i>
+                <span class="nav-text">Inicio</span>
+            </a>
+        </li>
+        <li class="nav-item" id="nav-ventas">
+            <b></b>
+            <b></b>
+            <a href="HistorialVenta.html">
+                <i class="fa fa-cash-register nav-icon"></i>
+                <span class="nav-text">Ventas</span>
+            </a>
+        </li>
+        <li class="nav-item" id="nav-productos">
+            <b></b>
+            <b></b>
+            <a href="Productos.html">
+                <i class="fa fa-box nav-icon"></i>
+                <span class="nav-text">Productos</span>
+            </a>
+        </li>
+        <li class="nav-item" id="nav-clientes">
+            <b></b>
+            <b></b>
+            <a href="clientes.html">
+                <i class="fa fa-users nav-icon"></i>
+                <span class="nav-text">Clientes</span>
+            </a>
+        </li>
+        <li class="nav-item" id="nav-config">
+            <b></b>
+            <b></b>
+            <a href="configuracion.html">
+                <i class="fa fa-gear nav-icon"></i>
+                <span class="nav-text">Configuración</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+// Función para marcar la página activa
+document.addEventListener('DOMContentLoaded', function() {
+    const currentPage = window.location.pathname.split('/').pop();
+    const navItems = document.querySelectorAll('.nav-item');
+    
+    navItems.forEach(item => {
+        if (item.querySelector('a').getAttribute('href') === currentPage) {
+            item.classList.add('active');
+        }
+    });
+});
+</script>
