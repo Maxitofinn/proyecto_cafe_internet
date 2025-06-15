@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegistrarVenta</title>
+
+   <!-- Carga tu CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+</head>
+<body>
+    <main>  
+        <section class="content">
+            <div class="left-content">
+                <div class="activities">
+                    <h1>Registro de Venta</h1>
+                    <div class="form-container">
+                        <!-- Sección de agregar productos -->
+                        <div class="container_agregar_productos">
+                            <h2>Productos Disponibles</h2>
+                            <select class="caja_productos" id="producto" required>
+                                <option value="">Selecciona un producto</option>
+                                <!-- Los productos se cargarán dinámicamente aquí -->
+                            </select>
+                            
+                            <input class="caja_productos" type="number" id="quantity" value="1" min="1" />    
+                            <button class="btn" id="agregarProducto">Agregar Producto</button>              
+                        </div>
+                        
+                        <!-- Sección de productos seleccionados -->
+                        <div class="container_MP">
+                            <h2>Productos seleccionados</h2>
+                            <div class="container_mostrar_productos">  
+                                <ul id="listaProductos">
+                                    <!-- Aquí se agregan los productos seleccionados -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sección de realizar venta -->
+                    <div class="container_realizar_venta">
+                        <select class="caja_productos" id="empleado" required>
+                            <option value="">Empleado</option>
+                            <!-- Los empleados se cargarán dinámicamente aquí -->
+                        </select>
+                        <select class="caja_productos" id="formaPago" required>
+                            <option value="">Forma de pago</option>
+                            <!-- Las formas de pago se cargarán dinámicamente aquí -->
+                        </select>
+                        <button class="btn btn-primary" id="realizarVenta">Realizar venta</button>  
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='js/registrarVenta.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/menu.js') }}"defer ></script>
+</body>
+</html>
