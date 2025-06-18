@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Historial de Rentas - Café Internet</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+</head>
+<body>
+  <main>
+    <section class="content">
+      <div class="left-content">
+        <div class="activities">
+          <h1>Historial de Rentas</h1>
+
+          <!-- Filtros -->
+          <div class="filtros-container">
+            <div class="filtro-item">
+              <label for="fechaRenta">Fecha de Renta</label>
+              <input type="text" class="caja_productos" id="fechaRenta" placeholder="Seleccione una fecha" />
+            </div>
+            <div class="filtro-item">
+              <label for="ordenarRentas">Ordenar por ID</label>
+              <select class="caja_productos" id="ordenarRentas">
+                <option value="id-asc">Ascendente</option>
+                <option value="id-desc">Descendente</option>
+              </select>
+            </div>
+            <div class="filtro-item">
+              <label for="buscarIdRenta">Buscar por ID</label>
+              <input type="text" class="caja_productos" id="buscarIdRenta" placeholder="ID de renta" />
+            </div>
+          </div>
+
+          <!-- Resultados -->
+          <div class="resultados-container">
+            <div class="tabla-ventas">
+              <table id="tablaRentas">
+                <thead>
+                  <tr>
+                    <th>ID Renta</th>
+                    <th>Fecha</th>
+                    <th>Empleado</th>
+                    <th>Dispositivos</th>
+                    <th>Horas</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Aquí van los datos -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+  <script src="{{ url_for('static', filename='js/menu.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='js/HistorialRentas.js') }}" defer></script>
+</body>
+</html>

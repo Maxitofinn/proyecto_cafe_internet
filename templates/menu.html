@@ -1,60 +1,84 @@
-<!-- menu.html -->
-<nav class="main-menu">
-    <h1>Café Internet</h1>
-    <ul>
-        <li class="nav-item" id="nav-inicio">
-            <b></b>
-            <b></b>
-            <a href="RegistrarVenta.html">
-                <i class="fa fa-house nav-icon"></i>
-                <span class="nav-text">Inicio</span>
-            </a>
-        </li>
-        <li class="nav-item" id="nav-ventas">
-            <b></b>
-            <b></b>
-            <a href="HistorialVenta.html">
-                <i class="fa fa-cash-register nav-icon"></i>
-                <span class="nav-text">Ventas</span>
-            </a>
-        </li>
-        <li class="nav-item" id="nav-productos">
-            <b></b>
-            <b></b>
-            <a href="Productos.html">
-                <i class="fa fa-box nav-icon"></i>
-                <span class="nav-text">Productos</span>
-            </a>
-        </li>
-        <li class="nav-item" id="nav-clientes">
-            <b></b>
-            <b></b>
-            <a href="clientes.html">
-                <i class="fa fa-users nav-icon"></i>
-                <span class="nav-text">Clientes</span>
-            </a>
-        </li>
-        <li class="nav-item" id="nav-config">
-            <b></b>
-            <b></b>
-            <a href="configuracion.html">
-                <i class="fa fa-gear nav-icon"></i>
-                <span class="nav-text">Configuración</span>
-            </a>
-        </li>
-    </ul>
-</nav>
-
-<script>
-// Función para marcar la página activa
-document.addEventListener('DOMContentLoaded', function() {
-    const currentPage = window.location.pathname.split('/').pop();
-    const navItems = document.querySelectorAll('.nav-item');
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Café Internet</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="import" href="menu.html" id="menu-import">
+</head>
+<body>
+    <main>
+        <section class="content">
+            <div class="left-content">
+                <div class="dashboard">
+                    <h1 class="titulo-grande">Bienvenido</h1>
+                    
+                    <!-- Resumen rápido con 3 métricas -->
+                    <div class="resumen-rapido">
+                        <div class="metric-card">
+                            <div class="metric-icon" style="background-color: #4e79a7;">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <div class="metric-info">
+                                <h3>Computadoras en uso</h3>
+                                <p id="computadoras-en-uso">8/15</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-card">
+                            <div class="metric-icon" style="background-color: #f28e2b;">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <div class="metric-info">
+                                <h3>Consolas ocupadas</h3>
+                                <p id="consolas-ocupadas">3/5</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-card">
+                            <div class="metric-icon" style="background-color: #e15759;">
+                                <i class="fas fa-receipt"></i>
+                            </div>
+                            <div class="metric-info">
+                                <h3>Ventas hoy</h3>
+                                <p id="ventas-hoy">24</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Accesos rápidos -->
+                    <div class="accesos-rapidos">
+                        <h2>ACCESOS RÁPIDOS</h2>
+                        <div class="botones-acceso">
+                            <button class="btn-acceso" onclick="location.href='/registrar'">
+                                <i class="fas fa-cash-register"></i>
+                                <span>Registrar Venta</span>
+                            </button>
+                            
+                            <button class="btn-acceso" onclick="location.href='/productos'">
+                                <i class="fas fa-box-open"></i>
+                                <span>Productos</span>
+                            </button>
+                            
+                            <button class="btn-acceso" onclick="location.href='historial'">
+                                <i class="fas fa-history"></i>
+                                <span>Historial de Ventas</span>
+                            </button>
+                            
+                            <button class="btn-acceso" onclick="location.href='/historial-rentas'">
+                                <i class="fas fa-cash-register"></i>
+                                <span>Registrar Renta</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     
-    navItems.forEach(item => {
-        if (item.querySelector('a').getAttribute('href') === currentPage) {
-            item.classList.add('active');
-        }
-    });
-});
-</script>
+    <script src="{{ url_for('static', filename='js/menu.js') }}" defer> </script>
+    <script src="{{ url_for('static', filename='js/inicio.js') }}" defer> </script>
+</body>
+</html>

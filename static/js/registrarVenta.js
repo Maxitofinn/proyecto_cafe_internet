@@ -9,6 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const realizarBtn      = document.getElementById('realizarVenta');
   const seleccionados    = [];
 
+  // Cargar productos de la API
   fetch('/api/productos')
     .then(r => r.json())
     .then(data => {
@@ -16,14 +17,18 @@ window.addEventListener('DOMContentLoaded', () => {
         ...data.papeleria.map(p => ({ ...p, tipo: 'papeleria' })),
         ...data.snacks   .map(s => ({ ...s, tipo: 'snack' }))
       ];
+
       productos.forEach(p => {
         const opt = document.createElement('option');
-        opt.value       = `${p.tipo}|${p.tipo==='papeleria'?p.id_producto:p.id_snack}`;
+        // p.tipo === 'papeleria' usa id_producto, si no usa id_snack
+        const idValor = p.tipo === 'papeleria' ? p.id_producto : p.id_snack;
+        opt.value       = `${p.tipo}|${idValor}`;
         opt.textContent = `${p.nombre_producto} - $${p.precio_unitario}`;
         productoSelect.append(opt);
       });
     });
 
+  // Cargar empleados y formas de pago (igual que antes)
   fetch('/api/empleados')
     .then(r => r.json())
     .then(list => {
@@ -41,57 +46,73 @@ window.addEventListener('DOMContentLoaded', () => {
     formaPagoSelect.append(opt);
   });
 
-  // Agregar producto a la lista
+  // Agregar producto seleccionado a la lista
   agregarBtn.addEventListener('click', () => {
     const val = productoSelect.value;
     if (!val) return;
-    const [tipo, id] = val.split('|');
-    const prod = productos.find(p =>
-      (tipo==='papeleria' ? p.id_producto : p.id_snack).toString() === id
-    );
-    const qty = parseInt(cantidadInput.value, 10);
+    const [tipo, idStr] = val.split('|');
+    // Buscamos el objeto cuyo id coincide (asegurándonos de comparar strings)
+    const prod = productos.find(p => {
+      const pid = p.tipo === 'papeleria' ? p.id_producto : p.id_snack;
+      return pid.toString() === idStr;
+    });
+    if (!prod) {
+      console.warn('Producto no encontrado para', val);
+      return;
+    }
+
+    const qty = parseInt(cantidadInput.value, 10) || 1;
     const item = { ...prod, cantidad: qty };
     seleccionados.push(item);
+
+    // Renderizamos en la lista
     const li = document.createElement('li');
     li.textContent = `${item.nombre_producto} x${item.cantidad}`;
     listaUL.append(li);
+
+    // Restablecer inputs
     productoSelect.value = '';
-    cantidadInput.value = 1;
+    cantidadInput.value  = 1;
   });
 
-  // Realizar venta
+  // Realizar venta (igual que antes)
   realizarBtn.addEventListener('click', () => {
-    if (!empleadoSelect.value || !formaPagoSelect.value || !seleccionados.length) return;
+    if (!empleadoSelect.value || !formaPagoSelect.value || seleccionados.length === 0) return;
     const payload = {
-      id_empleado:    parseInt(empleadoSelect.value, 10),
-      metodo_pago:    formaPagoSelect.value,
-      items:          seleccionados.map(p => ({
-        id_producto:     p.tipo==='papeleria' ? p.id_producto : null,
-        id_snack:        p.tipo==='snack'    ? p.id_snack    : null,
+      id_empleado: parseInt(empleadoSelect.value, 10),
+      metodo_pago: formaPagoSelect.value,
+      items: seleccionados.map(p => ({
+        id_producto:     p.tipo === 'papeleria' ? p.id_producto : null,
+        id_snack:        p.tipo === 'snack'    ? p.id_snack    : null,
         nombre_producto: p.nombre_producto,
         precio_unitario: p.precio_unitario,
         cantidad:        p.cantidad
       }))
     };
+
     fetch('/api/ventas', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify(payload)
     })
-    .then(r => r.json())
-    .then(resp => alert(resp.message));
+    .then(r => r.json().then(data => {
+      if (!r.ok) throw data;
+      return data;
+    }))
+    .then(data => {
+      alert(`${data.message} (ID: ${data.id_venta})`);
 
-     // —————— Aquí empieza la limpieza ——————
-      // Vaciamos el array que llevaba los ítems
+      // Limpiar todo tras venta
       seleccionados.length = 0;
-      // Vaciamos el UL donde se mostraban los productos
-      listaUL.innerHTML = '';
-      // Si quieres, también restablece selects y cantidad a valores por defecto:
-      productoSelect.value   = '';
-      cantidadInput.value    = 1;
-      empleadoSelect.value   = '';
-      formaPagoSelect.value  = '';
-      // —————— Fin de la limpieza ——————
+      listaUL.innerHTML    = '';
+      productoSelect.value = '';
+      cantidadInput.value  = 1;
+      empleadoSelect.value = '';
+      formaPagoSelect.value= '';
+    })
+    .catch(err => {
+      console.error('Error al registrar venta:', err);
+      alert(err.error || 'Ocurrió un error al registrar la venta.');
+    });
   });
-
 });

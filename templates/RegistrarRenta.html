@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renta de Dispositivos - Café Internet</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <main>
+        <section class="content">
+            <div class="left-content">
+                <div class="renta-dispositivos">
+                    <h1 class="titulo-grande">RENTA DE DISPOSITIVOS Y VIDEOJUEGOS</h1>
+                    
+                    <!-- Filtros -->
+                    <div class="filtros-container">
+                        <div class="filtro-item">
+                            <label for="renta-empleado">Empleado:</label>
+                            <select class="caja_productos" id="renta-empleado" required>
+                                <option value="">Selecciona un empleado</option>
+                                <!-- Los empleados se cargarán dinámicamente aquí -->
+                             </select>
+                            <label for="filtro-tipo">Filtrar por:</label>
+                            <select class="caja_productos" id="filtro-tipo">
+                                <option value="todos">Todos</option>
+                                <option value="computadoras">Computadoras</option>
+                                <option value="consolas">Consolas</option>
+                                <option value="videojuegos">Videojuegos</option>
+                                <option value="disponibles">Disponibles</option>
+                                <option value="ocupados">En uso</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filtro-item">
+                            <label for="buscar-dispositivo">Buscar:</label>
+                            <input type="text" class="caja_productos" id="buscar-dispositivo" placeholder="ID, nombre o consola">
+                        </div>
+                    </div>
+                    
+                    <!-- Sección de Computadoras -->
+                    <div class="seccion-dispositivos" id="computadoras-section">
+                        <h2><i class="fas fa-desktop"></i> COMPUTADORAS</h2>
+                        <div class="grid-dispositivos" id="grid-computadoras">
+                            <!-- Las computadoras se cargarán dinámicamente -->
+                        </div>
+                    </div>
+                    
+                    <!-- Sección de Consolas -->
+                    <div class="seccion-dispositivos" id="consolas-section">
+                        <h2><i class="fas fa-gamepad"></i> CONSOLAS</h2>
+                        <div class="grid-dispositivos" id="grid-consolas">
+                            <!-- Las consolas se cargarán dinámicamente -->
+                        </div>
+                    </div>
+                    
+                    <!-- Sección de Videojuegos -->
+                    <div class="seccion-dispositivos" id="videojuegos-section">
+                        <h2><i class="fas fa-compact-disc"></i> VIDEOJUEGOS</h2>
+                        <div class="grid-dispositivos" id="grid-videojuegos">
+                            <!-- Los videojuegos se cargarán dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+
+     <!-- <script src="{{ url_for('static', filename='js/menu.js') }}" defer> </script> -->
+    <script src="{{ url_for('static', filename='js/menu.js') }}" defer> </script>
+    <!-- <script src="{{ url_for('static', filename='js/menu.js') }}" defer> </script> -->
+    <script src="{{ url_for('static', filename='js/RegistrarRenta.js') }}" defer> </script>
+</body>
+</html>
